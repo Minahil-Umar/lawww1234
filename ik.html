@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switcher</title>
+    <style>
+        .lang { display: none; } /* Hide all languages by default */
+        .urdu { direction: rtl; } /* Set text direction for Urdu */
+    </style>
+</head>
+<body>
+    <!-- Language Selection -->
+    <div>
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('ur')">اردو</button>
+    </div>
+
+    <!-- Content -->
+    
+    <!-- JavaScript for Language Switching -->
+    <script>
+        function changeLanguage(language) {
+            // Hide all language elements
+            const elements = document.querySelectorAll('.lang');
+            elements.forEach(element => {
+                element.style.display = 'none';
+            });
+
+            // Show elements of the selected language
+            const selectedLangElements = document.querySelectorAll('.' + language);
+            selectedLangElements.forEach(element => {
+                element.style.display = 'block';
+            });
+        }
+
+        // Default to English on page load
+        changeLanguage('en');
+    </script>
+</body>
+</html>
+
